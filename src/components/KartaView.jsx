@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { VideoPreviewCard, VideoModal } from './VideoPreview.jsx';
+import { asset } from '../assetUrl.js';
 
 const LABEL_WIDTH = 116;
 const COL_MIN_WIDTH = 248;
@@ -51,7 +52,7 @@ function ToggleLabel({ open, onToggle, children }) {
         }}
       >
         <img
-          src="/assets/icons/chevron-down.svg"
+          src={asset('/assets/icons/chevron-down.svg')}
           width={14}
           height={14}
           alt=""
@@ -127,7 +128,7 @@ function PhaseButton({ phase, onOpen }) {
         {phase.fas}
       </span>
       <img
-        src="/assets/icons/chevron-right.svg"
+        src={asset('/assets/icons/chevron-right.svg')}
         width={14}
         height={14}
         alt=""
@@ -293,7 +294,7 @@ export default function KartaView({
                     {p.pains.map((pain, j) => (
                       <div key={j} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                         <img
-                          src="/assets/icons/alert-triangle.svg"
+                          src={asset('/assets/icons/alert-triangle.svg')}
                           width={14}
                           height={14}
                           alt=""
@@ -373,7 +374,7 @@ export default function KartaView({
                     {p.solutions.map((s, j) => (
                       <div key={j} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                         <img
-                          src="/assets/icons/circle-check.svg"
+                          src={asset('/assets/icons/circle-check.svg')}
                           width={14}
                           height={14}
                           alt=""

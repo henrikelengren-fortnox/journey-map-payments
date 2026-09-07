@@ -1,4 +1,5 @@
 import React from 'react';
+import { asset } from '../assetUrl.js';
 
 export function PlayIcon() {
   return (
@@ -92,7 +93,7 @@ export function VideoModal({ visual, onClose }) {
             zIndex: 1
           }}
         >
-          <img src="/assets/icons/x.svg" width={16} height={16} alt="Stäng" style={{ filter: 'invert(1)' }} />
+          <img src={asset('/assets/icons/x.svg')} width={16} height={16} alt="Stäng" style={{ filter: 'invert(1)' }} />
         </button>
         <video
           src={visual.src}

@@ -1,3 +1,5 @@
+import { asset } from './assetUrl.js';
+
 export const PHASES = [
   {
     id: 'lev', fas: 'En enhetlig betalupplevelse', steg: 'Hantera alla typer av betalningar på samma sätt', icon: 'file-invoice',
@@ -51,7 +53,7 @@ export const PHASES = [
       { title: 'Detaljvy för transaktioner (konton & kort)' }
     ],
     businessAreas: ['Betala', 'Finansiera', 'Engagera'],
-    visualisering: { type: 'video', src: '/assets/video/omrade-1.mov' }
+    visualisering: { type: 'video', src: asset('/assets/video/omrade-1.mov') }
   },
   {
     id: 'moms', fas: 'Betalning och bokföring som en sammanhängande process', steg: 'Bokför och betala i ett sammanhang', icon: 'receipt',

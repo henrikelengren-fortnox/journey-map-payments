@@ -1,4 +1,5 @@
 import React from 'react';
+import { asset } from '../assetUrl.js';
 
 function PrimaryButton({ children, onClick }) {
   return (
@@ -262,7 +263,7 @@ export default function PresentationView({ phases, idx, onPrev, onNext, onJump }
             {p.pains.map((pain, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                 <img
-                  src="/assets/icons/alert-triangle.svg"
+                  src={asset('/assets/icons/alert-triangle.svg')}
                   width={16}
                   height={16}
                   alt=""
@@ -297,7 +298,7 @@ export default function PresentationView({ phases, idx, onPrev, onNext, onJump }
             {p.solutions.map((s, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                 <img
-                  src="/assets/icons/circle-check.svg"
+                  src={asset('/assets/icons/circle-check.svg')}
                   width={16}
                   height={16}
                   alt=""

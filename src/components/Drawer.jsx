@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { enrichPhase } from '../phases.js';
+import { asset } from '../assetUrl.js';
 import { Pill } from './Editable.jsx';
 import { VideoPreviewCard, VideoModal } from './VideoPreview.jsx';
 
@@ -102,7 +103,7 @@ function PainsSection({ rawPhase }) {
       {rawPhase.pains.map((pain, i) => (
         <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
           <img
-            src="/assets/icons/alert-triangle.svg"
+            src={asset('/assets/icons/alert-triangle.svg')}
             width={16}
             height={16}
             alt=""
@@ -352,7 +353,7 @@ export default function Drawer({ idx, rawPhase, onClose }) {
               transition: 'background .15s'
             }}
           >
-            <img src="/assets/icons/x.svg" width={16} height={16} alt="Stäng" />
+            <img src={asset('/assets/icons/x.svg')} width={16} height={16} alt="Stäng" />
           </button>
         </div>
 

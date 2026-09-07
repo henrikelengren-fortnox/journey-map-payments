@@ -1,4 +1,5 @@
 import React from 'react';
+import { asset } from '../assetUrl.js';
 
 export default function Header() {
   return (
@@ -17,7 +18,7 @@ export default function Header() {
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <img src="/assets/fortnox-mark.svg" style={{ height: 28, display: 'block' }} alt="Fortnox" />
+        <img src={asset('/assets/fortnox-mark.svg')} style={{ height: 28, display: 'block' }} alt="Fortnox" />
       </div>
       <div style={{ width: 1, height: 24, background: 'var(--border-default)' }} />
       <div style={{ display: 'flex', alignItems: 'center', minWidth: 0 }}>
