@@ -1,0 +1,401 @@
+/* Forma Design System — Semantic tokens (single source of truth)
+ * Mirrors preview/colors-semantic.html exactly.
+ * Component previews should ONLY reference tokens defined here.
+ */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/InterVariable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ── Backgrounds ── */
+  --bg-viewport: #fafafa;
+  --bg-level-1:  #ffffff;
+  --bg-level-2:  #f2f2f2;
+  --bg-level-3:  #e6e6e6;
+  --bg-on-color: #fefefe;
+  --bg-float:    #fafafa;
+  --bg-disabled: #d6d6d6;
+  --bg-inverted: #0a0a0a;
+  --bg-menu:     #00522a;
+
+  /* legacy alias (do not use in new components) */
+  --bg-0: var(--bg-viewport);
+  --bg-1: var(--bg-level-1);
+  --bg-2: var(--bg-level-2);
+  --bg-3: var(--bg-level-3);
+
+  /* ── Text ── */
+  --text-primary:      #1a1a1a;
+  --text-secondary:    #4b4b4b;
+  --text-tertiary:     #676767;
+  --text-disabled:     #b3b3b3;
+  --text-read-only:    #808080;
+  --text-brand:        #007533;
+  --text-brand-yellow: #b16501;
+  --text-on-dark:      #f2f2f2;
+  --text-on-light:     #1a1a1a;
+  --text-inverted:     #fefefe;
+
+  /* legacy aliases */
+  --fg-primary: var(--text-primary);
+  --fg-secondary: var(--text-secondary);
+  --fg-tertiary: var(--text-tertiary);
+  --fg-on-dark: var(--text-on-dark);
+  --fg-on-light: var(--text-on-light);
+  --fg-brand: var(--text-brand);
+
+  /* ── Border ── */
+  --border-default:      rgba(0,0,0,.12);
+  --border-strong:       rgba(0,0,0,.36);
+  --border-light:        rgba(0,0,0,.06);
+  --border-brand:        #00a85a;
+  --border-brand-strong: #003824;
+
+  /* ── Accent ── */
+  --accent-neutral: #676767;
+  --accent-brand:   #007533;
+  --accent-info:    #9f6dd5;
+  --accent-error:   #e02523;
+
+  /* ── Brand ── */
+  --brand-default:      #007533;
+  --brand-dark:         #003824;
+  --brand-soft:         #deffde;
+  --brand-live-green:   #00db33;
+  --brand-yellow:       #ffc200;
+  --brand-yellow-soft:  #fffcdd;
+
+  /* brand gradients */
+  --brand-gradient-dark-green:       linear-gradient(90deg,#003824,#007533);
+  --brand-gradient-live-green:       linear-gradient(90deg,#007533,#00db33);
+  --brand-gradient-extra-dark-green: linear-gradient(90deg,#001a10,#003824);
+  --brand-gradient-purple:           linear-gradient(90deg,#400f54,#9f6dd5);
+  --brand-gradient-pink:             linear-gradient(90deg,#ff87b5,#f5e1ec);
+
+  /* ── Info (purple) — source: Forma Foundations ── */
+  --info-bg-default:   #f5edfd;
+  --info-bg-surface:   #ece0fb;
+  --info-bg-component: #c9a4ea;
+  --info-bg-strong:    #9f6dd5;
+  --info-text-default: #591d7c;
+  --info-text-contrast:#400f54;
+  --info-bdr:          #c9a4ea;
+  --info-bdr-strong:   #9f6dd5;
+
+  /* ── Success (green) ── */
+  --success-bg-default:   #deffde;
+  --success-bg-surface:   #b9f3ba;
+  --success-bg-component: #7ae07a;
+  --success-bg-strong:    #00c028;
+  --success-text-default: #007533;
+  --success-text-contrast:#00522a;
+  --success-bdr:          #7ae07a;
+  --success-bdr-strong:   #00c028;
+
+  /* ── Warning (yellow) ── */
+  --warning-bg-default:   #fffcdd;
+  --warning-bg-surface:   #fff5b3;
+  --warning-bg-component: #ffe066;
+  --warning-bg-strong:    #ffc200;
+  --warning-text-default: #b16501;
+  --warning-text-contrast:#572d00;
+  --warning-bdr:          #ffe066;
+  --warning-bdr-strong:   #ffc200;
+
+  /* ── Error (red) ── */
+  --error-bg-default:   #ffe1e1;
+  --error-bg-surface:   #ffb3b2;
+  --error-bg-component: #ff7877;
+  --error-bg-strong:    #f34240;
+  --error-text-default: #be2016;
+  --error-text-contrast:#7b0707;
+  --error-bdr:          #ff7877;
+  --error-bdr-strong:   #f34240;
+
+  /* ── Help (beige) ── */
+  --help-bg-default:   #f5ede0;
+  --help-bg-surface:   #ead9b8;
+  --help-bg-component: #debf9e;
+  --help-bg-strong:    #a57a4a;
+  --help-text-default: #6b4520;
+  --help-text-contrast:#3b2510;
+  --help-bdr:          #debf9e;
+  --help-bdr-strong:   #a57a4a;
+
+  /* ── Support (pink) ── */
+  --support-bg-default:   #fbeaf1;
+  --support-bg-surface:   #f5d1e0;
+  --support-bg-component: #ffa8c8;
+  --support-bg-strong:    #ff87b5;
+  --support-text-default: #a8135a;
+  --support-text-contrast:#5c0a33;
+  --support-bdr:          #ffa8c8;
+  --support-bdr-strong:   #ff87b5;
+
+  /* ── Auxiliary (blue) — source: Forma Foundations ── */
+  --aux-bg-default:   #e8f0ff;
+  --aux-bg-surface:   #cddcfb;
+  --aux-bg-component: #9cb8f5;
+  --aux-bg-strong:    #4577e5;
+  --aux-text-default: #253985;
+  --aux-text-contrast:#10194a;
+  --aux-bdr:          #9cb8f5;
+  --aux-bdr-strong:   #4577e5;
+
+  /* ── Neutral (gray) ── */
+  --neutral-bg-default:   #f2f2f2;
+  --neutral-bg-surface:   #e6e6e6;
+  --neutral-bg-component: #cccccc;
+  --neutral-bg-strong:    #808080;
+  --neutral-text-default: #4b4b4b;
+  --neutral-text-contrast:#1a1a1a;
+  --neutral-bdr:          #cccccc;
+  --neutral-bdr-strong:   #808080;
+
+  /* ── Utility ── */
+  --utility-focus:       #9f6dd5;
+  --utility-overlay-60:  rgba(0,0,0,.60);
+  --utility-link:        #007533;
+  --utility-link-hover:  #00522a;
+  --utility-hover:       rgba(0,0,0,.04);
+
+  /* ── Opacity ── */
+  --opacity-white-10: rgba(255,255,255,.10);
+  --opacity-white-15: rgba(255,255,255,.15);
+  --opacity-white-20: rgba(255,255,255,.20);
+  --opacity-white-50: rgba(255,255,255,.50);
+  --opacity-white-75: rgba(255,255,255,.75);
+  --opacity-black-10: rgba(0,0,0,.10);
+  --opacity-black-15: rgba(0,0,0,.15);
+  --opacity-black-20: rgba(0,0,0,.20);
+  --opacity-black-50: rgba(0,0,0,.50);
+  --opacity-black-75: rgba(0,0,0,.75);
+
+  /* ── Typography ── */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --text-xs:   12px; --lh-xs:   18px;
+  --text-sm:   14px; --lh-sm:   20px;
+  --text-base: 16px; --lh-base: 24px;
+  --text-lg:   18px; --lh-lg:   24px;
+  --text-xl:   20px; --lh-xl:   28px;
+  --text-2xl:  24px; --lh-2xl:  32px;
+  --text-3xl:  30px; --lh-3xl:  40px;
+  --text-4xl:  36px; --lh-4xl:  48px;
+  --text-5xl:  48px; --lh-5xl:  56px;
+  --text-6xl:  60px; --lh-6xl:  72px;
+  --text-utility-sm: 10px; --lh-utility-sm: 12px;
+  --text-utility-lg: 12px; --lh-utility-lg: 14px;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ── Radii ── */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-full: 9999px;
+
+  /* ── Spacing ── */
+  --space-0: 0;    --space-1: 4px;  --space-2: 8px;  --space-3: 12px;
+  --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-8: 32px;
+  --space-10: 40px; --space-12: 48px; --space-16: 64px; --space-20: 80px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow:    0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.10), 0 8px 10px -6px rgba(0,0,0,0.10);
+  --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0,0,0,0.05);
+}
+
+/* ───────────────────────── Dark theme ─────────────────────────
+ * Source: Figma "Forma tokens App - Dark" (node 13662:15668).
+ * Every semantic token in :root has a 1:1 dark counterpart here.
+ * Apply via <html data-theme="dark"> or [data-theme="dark"] on any subtree.
+ */
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg-viewport: #0a0a0a;
+  --bg-level-1:  #1a1a1a;
+  --bg-level-2:  #212121;
+  --bg-level-3:  #363636;
+  --bg-on-color: #fafafa;
+  --bg-float:    #2f2f2f;
+  --bg-disabled: #0a0a0a;
+  --bg-inverted: #fafafa;
+  --bg-menu:     #003824;
+
+  --bg-0: var(--bg-viewport);
+  --bg-1: var(--bg-level-1);
+  --bg-2: var(--bg-level-2);
+  --bg-3: var(--bg-level-3);
+
+  /* Text */
+  --text-primary:      #fafafa;
+  --text-secondary:    #d2d2d2;
+  --text-tertiary:     #8d8d8d;
+  --text-disabled:     #595959;
+  --text-read-only:    #757575;
+  --text-brand:        #00db33;
+  --text-brand-yellow: #ffc200;
+  --text-on-dark:      #f2f2f2;
+  --text-on-light:     #282828;
+  --text-inverted:     #282828;
+
+  --fg-primary: var(--text-primary);
+  --fg-secondary: var(--text-secondary);
+  --fg-tertiary: var(--text-tertiary);
+  --fg-on-dark: var(--text-on-dark);
+  --fg-on-light: var(--text-on-light);
+  --fg-brand: var(--text-brand);
+
+  /* Border */
+  --border-default:      rgba(255,255,255,.24);
+  --border-strong:       rgba(255,255,255,.30);
+  --border-light:        rgba(255,255,255,.12);
+  --border-brand:        rgba(0,117,51,.24);
+  --border-brand-strong: rgba(0,82,42,.66);
+
+  /* Accent */
+  --accent-neutral: #363636;
+  --accent-brand:   #00c028;
+  --accent-info:    #591d7c;
+  --accent-error:   #be2016;
+
+  /* Brand */
+  --brand-default:      #007533;
+  --brand-dark:         #003824;
+  --brand-soft:         #00522a;
+  --brand-live-green:   #00db33;
+  --brand-yellow:       #ffc200;
+  --brand-yellow-soft:  #572d00;
+
+  /* Info */
+  --info-bg-default:   #2b0a38;
+  --info-bg-surface:   #591d7c;
+  --info-bg-component: #652d90;
+  --info-bg-strong:    #8047ba;
+  --info-text-default: #e5d3f8;
+  --info-text-contrast:#f5edfd;
+  --info-bdr:          rgba(197,163,235,.3);
+  --info-bdr-strong:   rgba(197,163,235,.7);
+
+  /* Success */
+  --success-bg-default:   #002517;
+  --success-bg-surface:   #007533;
+  --success-bg-component: #069830;
+  --success-bg-strong:    #00c028;
+  --success-text-default: #cafccd;
+  --success-text-contrast:#efffef;
+  --success-bdr:          rgba(131,247,135,.3);
+  --success-bdr-strong:   rgba(131,247,135,.7);
+
+  /* Warning */
+  --warning-bg-default:   #331e00;
+  --warning-bg-surface:   #8f4f00;
+  --warning-bg-component: #b16501;
+  --warning-bg-strong:    #d68400;
+  --warning-text-default: #fff7b7;
+  --warning-text-contrast:#fffdf5;
+  --warning-bdr:          rgba(255,194,0,.3);
+  --warning-bdr-strong:   rgba(255,194,0,.7);
+
+  /* Error */
+  --error-bg-default:   #560505;
+  --error-bg-surface:   #930e00;
+  --error-bg-component: #be2016;
+  --error-bg-strong:    #e02523;
+  --error-text-default: #fea4a3;
+  --error-text-contrast:#ffe1e1;
+  --error-bdr:          rgba(254,164,163,.3);
+  --error-bdr-strong:   rgba(254,164,163,.7);
+
+  /* Help */
+  --help-bg-default:   #341c16;
+  --help-bg-surface:   #623a2c;
+  --help-bg-component: #784534;
+  --help-bg-strong:    #955439;
+  --help-text-default: #e9d6bf;
+  --help-text-contrast:#fbf7f1;
+  --help-bdr:          rgba(179,106,67,.3);
+  --help-bdr-strong:   rgba(179,106,67,.7);
+
+  /* Support */
+  --support-bg-default:   #3f0418;
+  --support-bg-surface:   #9a114b;
+  --support-bg-component: #cc336e;
+  --support-bg-strong:    #de4c84;
+  --support-text-default: #ffebf6;
+  --support-text-contrast:#fff5fc;
+  --support-bdr:          rgba(255,150,190,.3);
+  --support-bdr-strong:   rgba(255,150,190,.7);
+
+  /* Auxiliary */
+  --aux-bg-default:   #0b1c5b;
+  --aux-bg-surface:   #253985;
+  --aux-bg-component: #4577e5;
+  --aux-bg-strong:    #4577e5;
+  --aux-text-default: #d2e4fe;
+  --aux-text-contrast:#e1edfe;
+  --aux-bdr:          rgba(118,171,255,.3);
+  --aux-bdr-strong:   rgba(118,171,255,.7);
+
+  /* Neutral */
+  --neutral-bg-default:   #2f2f2f;
+  --neutral-bg-surface:   #595959;
+  --neutral-bg-component: #676767;
+  --neutral-bg-strong:    #8d8d8d;
+  --neutral-text-default: #d2d2d2;
+  --neutral-text-contrast:#fafafa;
+  --neutral-bdr:          rgba(255,255,255,.24);
+  --neutral-bdr-strong:   rgba(255,255,255,.30);
+
+  /* Utility */
+  --utility-focus:       rgba(101,0,207,.7);
+  --utility-overlay-60:  rgba(10,10,10,.4);
+  --utility-link:        #00db33;
+  --utility-link-hover:  #069830;
+  --utility-hover:       rgba(248,248,248,.15);
+
+  /* Shadows — heavier on dark */
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.40);
+  --shadow:    0 1px 3px 0 rgba(0,0,0,0.50), 0 1px 2px -1px rgba(0,0,0,0.50);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.50), 0 2px 4px -2px rgba(0,0,0,0.50);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.55), 0 4px 6px -4px rgba(0,0,0,0.50);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.60), 0 8px 10px -6px rgba(0,0,0,0.50);
+  --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.75);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0,0,0,0.40);
+}
+
+html, body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background: var(--bg-viewport);
+  -webkit-font-smoothing: antialiased;
+}
+
+.type-display-md { font-weight: 700; font-size: var(--text-6xl); line-height: var(--lh-6xl); letter-spacing: -0.02em; }
+.type-display-sm { font-weight: 700; font-size: var(--text-5xl); line-height: var(--lh-5xl); letter-spacing: -0.02em; }
+.type-heading-lg { font-weight: 700; font-size: var(--text-4xl); line-height: var(--lh-4xl); letter-spacing: -0.01em; }
+.type-heading-md { font-weight: 700; font-size: var(--text-3xl); line-height: var(--lh-3xl); letter-spacing: -0.01em; }
+.type-heading-sm { font-weight: 700; font-size: var(--text-2xl); line-height: var(--lh-2xl); letter-spacing: -0.01em; }
+.type-heading-xs { font-weight: 700; font-size: var(--text-xl);  line-height: var(--lh-xl); }
+.type-body-lg    { font-size: var(--text-lg); line-height: var(--lh-lg); }
+.type-body-base  { font-size: var(--text-base); line-height: var(--lh-base); }
+.type-body-sm    { font-size: var(--text-sm); line-height: var(--lh-sm); }
+.type-body-xs    { font-size: var(--text-xs); line-height: var(--lh-xs); }
+.type-utility-lg { font-size: var(--text-utility-lg); line-height: var(--lh-utility-lg); letter-spacing: 0.02em; text-transform: uppercase; }
+.type-utility-sm { font-size: var(--text-utility-sm); line-height: var(--lh-utility-sm); letter-spacing: 0.02em; text-transform: uppercase; }
